@@ -1,0 +1,22 @@
+[project]
+name = "fraudnet"
+version = "1.0.0"
+description = "Graph-augmented credit-card fraud detection (IEEE-CIS): XGBoost + entity network + FastAPI + Streamlit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E702", "B023", "B905"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["fraudnet", "api"]
